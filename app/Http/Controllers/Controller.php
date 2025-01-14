@@ -14,27 +14,23 @@ class Controller
         switch ($operator) {
             case 'addition':
                 $result = $value1 + $value2;
-                $symbol = '+';
                 break;
             case 'subtraction':
                 $result = $value1 - $value2;
-                $symbol = '-';
                 break;
             case 'multiplication': 
                 $result = $value1 * $value2;
-                $symbol = '*';
                 break;
             case 'division': 
                 if ($value2 == 0) {
                     return "エラー: 0で割ることはできません。";
                 }
                 $result = $value1 / $value2;
-                $symbol = '/';
                 break;
             default:
                 return "エラー: 無効な演算子です。";
         }
 
-        return view('result', compact('value1', 'symbol', 'value2', 'result'));
+        return view('result',compact('result'));
     }
 }
